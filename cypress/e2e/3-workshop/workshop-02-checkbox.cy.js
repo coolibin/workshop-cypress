@@ -66,7 +66,8 @@ context('Checkbox Testing Workshop', () => {
             cy.get('@testCheckbox')
                 .should('have.attr', 'type', 'checkbox')
                 .and('not.be.checked')
-                .check()
+            
+            cy.get('@testCheckbox').check()
             
             cy.get('@testCheckbox')
                 .should('be.checked')
@@ -106,7 +107,8 @@ context('Checkbox Testing Workshop', () => {
             cy.get('@visibleCheckbox')
                 .should('be.visible')
                 .and('not.be.checked')
-                .check()
+            
+            cy.get('@visibleCheckbox').check()
             
             cy.get('@visibleCheckbox').should('be.checked')
         })
