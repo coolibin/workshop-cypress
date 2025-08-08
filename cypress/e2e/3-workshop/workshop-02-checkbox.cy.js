@@ -151,7 +151,8 @@ context('Checkbox Testing Workshop', () => {
 
         it('should test checkbox accessibility', () => {
             // Test keyboard navigation and accessibility
-            cy.get('@advancedCheckbox').focus().type(' ')
+            cy.get('@advancedCheckbox').focus()
+            cy.get('@advancedCheckbox').type(' ')
             
             cy.get('@advancedCheckbox').should('be.checked')
             cy.get('@advancedCheckbox').type(' ')
