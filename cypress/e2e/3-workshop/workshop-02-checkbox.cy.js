@@ -22,7 +22,8 @@ context('Checkbox Testing Workshop', () => {
         it('should uncheck and verify checkbox state', () => {
             // First check the checkbox, then uncheck it
             cy.get('@checkbox2').check()
-            cy.get('@checkbox2').should('be.checked').uncheck()
+            cy.get('@checkbox2').should('be.checked')
+            cy.get('@checkbox2').uncheck()
             cy.get('@checkbox2').should('not.be.checked')
         })
 
@@ -95,7 +96,8 @@ context('Checkbox Testing Workshop', () => {
         it('should handle unchecking disabled checkboxes with force option', () => {
             // First check a disabled checkbox, then uncheck it with force
             cy.get('@disabledCheckbox2').check({force: true})
-            cy.get('@disabledCheckbox2').should('be.checked').uncheck({force: true})
+            cy.get('@disabledCheckbox2').should('be.checked')
+            cy.get('@disabledCheckbox2').uncheck({force: true})
             cy.get('@disabledCheckbox2').should('not.be.checked')
         })
 
@@ -149,7 +151,8 @@ context('Checkbox Testing Workshop', () => {
             // Test keyboard navigation and accessibility
             cy.get('@advancedCheckbox').focus().type(' ')
             
-            cy.get('@advancedCheckbox').should('be.checked').type(' ')
+            cy.get('@advancedCheckbox').should('be.checked')
+            cy.get('@advancedCheckbox').type(' ')
             
             cy.get('@advancedCheckbox').should('not.be.checked')
         })
